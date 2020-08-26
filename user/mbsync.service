@@ -1,0 +1,8 @@
+[Unit]
+Description=Mailbox sync
+After=network-online.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -a
+ExecStartPost=/usr/bin/notmuch new --quiet

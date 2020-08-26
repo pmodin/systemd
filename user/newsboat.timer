@@ -1,0 +1,9 @@
+[Unit]
+Description=Newsboat RSS Feed Update Daemon Timer
+
+[Timer]
+OnActiveSec=3h
+OnUnitActiveSec=3h
+
+[Install]
+WantedBy=timers.target

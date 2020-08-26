@@ -1,0 +1,13 @@
+[Unit]
+Description=Clean Gentoo distfiles
+Documentation=man:eclean(1)
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=local-fs.target time-set.target
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=eclean-dist
+SuccessExitStatus=DATAERR
+IOSchedulingClass=idle

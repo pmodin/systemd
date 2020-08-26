@@ -1,0 +1,13 @@
+[Unit]
+Description=Clean Gentoo binary packages
+Documentation=man:eclean(1)
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=local-fs.target time-set.target
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=eclean-pkg
+SuccessExitStatus=DATAERR
+IOSchedulingClass=idle

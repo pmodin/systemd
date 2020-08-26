@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly cleanup of Gentoo distfiles
+Documentation=man:eclean(1)
+
+[Timer]
+OnBootSec=1h
+OnCalendar=weekly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
